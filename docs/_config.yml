@@ -1,6 +1,7 @@
 theme: jekyll-theme-minimal
 logo: https://www.rust-lang.org/static/images/rust-logo-blk.svg
 show_downloads: true
+author: <a href="mailto:mail@abdus.xyz">Abdus &lt;mail@abdus.xyz&gt;</a>
 
 collections:
   notes:
@@ -10,7 +11,7 @@ collections:
 
 defaults:
   - scope:
-      path: ""
+      path: ''
       type: notes
     values:
       layout: post

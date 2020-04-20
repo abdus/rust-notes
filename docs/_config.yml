@@ -1,1 +1,16 @@
 theme: jekyll-theme-leap-day
+logo: https://www.rust-lang.org/static/images/rust-logo-blk.svg
+show_downloads: true
+
+collections:
+  notes:
+    output: true
+    sort_by: date
+    permalink: /:collection/:title
+
+defaults:
+  - scope:
+      path: ""
+      type: "notes"
+    values:
+      layout: post

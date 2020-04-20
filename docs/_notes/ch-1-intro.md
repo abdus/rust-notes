@@ -1,3 +1,8 @@
+---
+title: Intro to Rust
+date: 2020-04-19 13:56:28.932033940 +0530
+---
+
 # Intro to Rust
 
 > Rust is a statically typed language backed by Mozilla. Rust have no built-in garbage-collection mechanism, yet it gives the maximum possible security to memory leaks.

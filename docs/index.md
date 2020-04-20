@@ -1,3 +1,3 @@
-- [Chapter 1: Intro to Rust](/ch-1-intro.md)
-- [Chapter 2: Cargo](/ch-2-cargo.md)
-- [Chapter 2: Guessing Game](/ch-3-guessing-game.md)
+{% for note in site.notes %}
+- [{{ note.title }}]({{ note.url }})
+{% endfor %}

@@ -72,7 +72,7 @@ loop {
 let mut guess = String::new();
 ```
 
-`let` is a keyword for **defining variables** and assign a value to it. By default, Rust variables are immutable. They can't be changed once decleared. The `mut` keyword is used for **mutating a variable** so that it could be modified in a later stage.
+`let` is a keyword for **defining variables** and assign a value to it. By default, Rust variables are immutable. They can't be changed once declared. The `mut` keyword is used for **mutating a variable** so that it could be modified in a later stage.
 
 The `String::new()` creates an empty value of type `string`. The **`new()` after `::` is known as an associated function** of the type `String`.
 
@@ -126,7 +126,7 @@ let guess: u32 = match guess.trim().parse() {
 };
 ```
 
-Variable Shadowing is **the process of redeclearing a already defined variable with a new type**. This is a unique thing allowed in Rust! Shadowing helps a programmer to save-up memory space by reusing a variable.
+Variable Shadowing is **the process of redeclaring a already defined variable with a new type**. This is a unique thing allowed in Rust! Shadowing helps a programmer to save-up memory space by reusing a variable.
 
 **`u32`** (unsigned 32 bit Integer) is the data type the string is to be converted to.
 

@@ -7,7 +7,7 @@ date: 2020-04-19 13:56:28.932033940 +0530
 
 ## 1. The `fn` Keyword
 
-`fn` is a reserved keyword in Rust. It's used for declearing a function.
+`fn` is a reserved keyword in Rust. It's used for declaring a function.
 
 ## 2. The `main()` function
 

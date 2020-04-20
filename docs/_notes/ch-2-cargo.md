@@ -3,8 +3,6 @@ title: Cargo
 date: 2020-04-19 14:32:19.664354143 +0530
 ---
 
-# Cargo
-
 Cargo is the Rust package manager and build tool. It's used to initialize, build and manage dependencies of a project.
 
 ## 1. `cargo new PROJECT_NAME`

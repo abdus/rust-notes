@@ -3,8 +3,6 @@ title: Guessing Game
 date: 2020-04-20 10:51:15.518646319 +0530
 ---
 
-# Guessing Game
-
 ```rs
 use rand::Rng;
 use std::cmp::Ordering;

@@ -1,4 +1,4 @@
-theme: jekyll-theme-leap-day
+theme: jekyll-theme-minimal
 logo: https://www.rust-lang.org/static/images/rust-logo-blk.svg
 show_downloads: true
 

@@ -1,0 +1,7 @@
+<h2>Notes</h2>
+
+{% for note in site.notes %}
+<li>
+  <a href="{{ note.url }}">{{ note.title }}</a>
+</li>
+{% endfor %}

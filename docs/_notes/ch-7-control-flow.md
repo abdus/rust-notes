@@ -1,6 +1,6 @@
 ---
 date: Wed 22 Apr 2020 05:13:47 PM +0530
-title: Coontrol Flow
+title: Control Flow
 tags: ['control-flow', 'if', 'if-else']
 ---
 

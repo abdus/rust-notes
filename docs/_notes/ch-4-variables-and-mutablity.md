@@ -1,5 +1,5 @@
 ---
-date:Mon 20 Apr 2020 08:27:47 PM +0530
+date: Mon 20 Apr 2020 08:27:47 PM +0530
 title: Variables and Mutablity
 ---
 

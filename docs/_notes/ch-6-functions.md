@@ -59,8 +59,9 @@ fn five() -> i32 {
   // `5` would be returned as it's the final expression
   // putting a semicolon after `5` would throw an error:
   // error[E0308]: mismatched types
-  // because semicolon made it a statment; and statment returns nothing
-  // so the return type of function mismatched with what was actually returned, which is basically nothing
+  // because semicolon made it a statement; and statement returns nothing
+  // so the return type of function mismatched with what was actually returned, 
+  // which is basically nothing
 }
 
 fn main() {

@@ -26,3 +26,44 @@ title: Data Types
 2. Compound
    - Tuple
    - Array
+
+### Tuple
+
+General way of grouping togather a number of values with variety of types.
+
+```rs
+fn main() {
+  let tup: (i32, f64, u8) = (500, 5.2, 1);
+
+  // accessing values
+  // destructuring method
+  let (x, y, z) = tup;  // x = 500, y = 5.2, z = 1
+
+  // `access by index` method
+  let five_hun = tup.0;
+  let float5_2 = tup.1;
+  let one = tup.2;
+}
+```
+
+### Array
+
+Array stores collections of multiple values, but of same type.
+
+```rs
+fn main() {
+  // declaring an array
+  let a = [1, 3, 4, 6, 5];
+  let b: [i32, 3] = [1, 4, 2];  // array of size 3 of type `i32`
+  let c = [4, 10];    // array of size `10` containing same value, i.e. `4`
+
+  // accessing an array
+  const firstValue = a[0];
+  const secondValue = a[1];
+
+  // main panic
+  const valueDoesNotExists = a[400];
+}
+```
+
+> Accessing an element of an array which is past the end of the array, would result an `index out of bounds` error, which in result would `panic` the `main` thread. This gives a more safe memory access, as the program won't be able to access invalid memory location.

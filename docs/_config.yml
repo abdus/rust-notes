@@ -1,4 +1,9 @@
-theme: jekyll-theme-minimal
+title: Rust Notes
+tagline: Notes I have taken while learning Rust.
+description: >- # this means to ignore newlines until "baseurl:"
+  Rust is a Strictly typed language, suitable for many use-cases.
+
+theme: jekyll-theme-hyde-dark
 logo: https://www.rust-lang.org/static/images/rust-logo-blk.svg
 show_downloads: true
 author: Abdus &lt;mail@abdus.xyz&gt;

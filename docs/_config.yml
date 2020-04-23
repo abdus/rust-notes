@@ -12,7 +12,7 @@ collections:
   notes:
     output: true
     sort_by: date
-    permalink: /:collection/:title
+    permalink: /:collection/:title:output_ext
 
 defaults:
   - scope:

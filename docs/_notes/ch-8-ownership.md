@@ -2,6 +2,7 @@
 date: Sun 26 Apr 2020 09:03:58 PM +0530
 title: Ownership
 tags: ['ownership']
+excerpt: Each value in Rust has a variable that is called its **Owner**. There can only be one owner at a time. When the owner goes out of scope, the value will be dropped.
 ---
 
 ## Ownership Rules
@@ -43,33 +44,15 @@ let s2 = s1;    // pointer to `s1`'s object. `s1` destroyed
 
 An object is made up of three parts: 1. **Pointer** to the memory location where object is stored 2. **Length** 3. **Capacity**
 
-s1(stored in Stack):
+**s1(stored in Stack)** and **hello(stored in heap)**
 
-|   name   |                value                |
-| :------: | :---------------------------------: |
-|   ptr    | (index 0 of the following table 👇) |
-|   len    |                  5                  |
-| capacity |                  5                  |
-
-hello(in heap memory):
-
-| index | value |
-| :---: | :---: |
-|   0   |   h   |
-|   0   |   e   |
-|   0   |   l   |
-|   0   |   l   |
-|   0   |   o   |
+![](https://doc.rust-lang.org/book/img/trpl04-01.svg)
 
 On assigning `s1` to a new variable, it will point to the same heap location. Because, when a `s1` is assigned to `s2`, all three parts(ptr, len, capacity) were copied.
 
-s2(stored in Stack):
+**s2(stored in Stack):**
 
-|   name   |              value              |
-| :------: | :-----------------------------: |
-|   ptr    | (index 0 of the above table 👆) |
-|   len    |                5                |
-| capacity |                5                |
+![](https://doc.rust-lang.org/book/img/trpl04-02.svg)
 
 Now, when `s1` and `s2` would go out of the scope, compiler would try to free the same memory twice, which is known as **Double Free Error**. This would lead to **memory corruption**, and ultimately security vulnerabilities.
 

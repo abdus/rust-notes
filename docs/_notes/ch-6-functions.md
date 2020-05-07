@@ -60,7 +60,7 @@ fn five() -> i32 {
   // putting a semicolon after `5` would throw an error:
   // error[E0308]: mismatched types
   // because semicolon made it a statement; and statement returns nothing
-  // so the return type of function mismatched with what was actually returned, 
+  // so the return type of function mismatched with what was actually returned,
   // which is basically nothing
 }
 
@@ -68,5 +68,23 @@ fn main() {
   let x = five();
 
   println!("Value of x is {}", x);
+}
+```
+
+## Returning multiple values with tuple
+
+In Rust, tuples could be used to return multiple values.
+
+```rust
+fn main() {
+  let string_a = String::from("Hello, world");
+  let (string_b, len) = claculate_len(string_a);
+
+  println!("{} {}", string_b, len);
+}
+
+fn claculate_len(s: String) -> (String, usize) {
+  let length = s.len();
+  (s, length)
 }
 ```

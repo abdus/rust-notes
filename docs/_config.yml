@@ -1,7 +1,7 @@
 title: Rust Notes
 tagline: Notes I have taken while learning Rust.
 description: >- # this means to ignore newlines until "baseurl:"
-  Rust is a Strictly typed language, suitable for many use-cases.
+  Rust is blazingly fast and memory-efficient: with no runtime or garbage collector, it can power performance-critical services, run on embedded devices, and easily integrate with other languages.
 
 theme: jekyll-theme-hyde-dark
 logo: https://www.rust-lang.org/static/images/rust-logo-blk.svg

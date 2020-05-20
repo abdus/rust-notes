@@ -1,5 +1,5 @@
 ---
-date: Thu 07 May 2020 03:41:28 PM +0530
+date: Wed 20 May 2020 09:40:00 PM +0530
 title: Structures
 tags: ['structures', 'struct']
 ---

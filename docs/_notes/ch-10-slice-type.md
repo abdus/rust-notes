@@ -1,5 +1,5 @@
 ---
-date: Thu 07 May 2020 03:41:28 PM +0530
+date: Wed 20 May 2020 08:47:30 PM +0530
 title: Slice Type
 tags: ['slice']
 ---

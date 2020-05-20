@@ -67,7 +67,7 @@ Compiling variables v0.1.0 (/home/crow/Dev/rust/sources/variables)
     Finished dev [unoptimized + debuginfo] target(s) in 0.38s
      Running `target/debug/variables`
 Value of X is 5
-Value of X is 15
+Value of X is 6
 ```
 
 ## Mutating a Value

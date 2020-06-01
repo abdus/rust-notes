@@ -88,3 +88,48 @@ struct Color(i32, i32, i32);
 
 let black = Color(0, 0, 0);
 ```
+
+## Example Code Snippet using Struct
+
+```rs
+#[derive(Debug)]
+struct Rectangle {
+    width: i32,
+    height: i32,
+}
+
+fn main() {
+    let r1 = Rectangle {
+        height: 30,
+        width: 20,
+    };
+
+    println!("Rectangle is {:#?}", r1);
+    println!("Area is {}", area(&r1));
+}
+
+fn area(dimension: &Rectangle) -> i32 {
+    dimension.height * dimension.width
+}
+```
+
+**Note:**
+
+1. By default, `println!` mecro can not print structures. A formatter `:?`(`:#?` for pretty print) should be added. Example: `println!("Rectangle is {:#?}", struct_instance);`
+
+2. `#[derive(Debug)]` - Implements `std::fmt::Debug` in `struct Rectangle`. Without this method, above formatter won't work.
+
+3. `&Rectangle` is used so that the `main` function can keep the ownership of `r1` instance.
+
+> Structures could be anonymous as well as named. For example:
+
+```rs
+enum Rect {
+  Dimension {
+    height: u32,
+    width: u32,
+  }
+}
+```
+
+`Rect::Dimension` is an anonymous struct

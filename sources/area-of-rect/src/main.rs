@@ -27,6 +27,7 @@ fn main() {
         height: 4,
         width: 5,
     };
+
     let r2 = Rect {
         height: 2,
         width: 3,
@@ -38,4 +39,3 @@ fn main() {
     println!("Can Hold r2: {}", r1.can_hold(&r2)); // true
     println!("Square: {:?}", square); // Rect { height: 10, width: 10 }
 }
-

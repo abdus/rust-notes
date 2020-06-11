@@ -88,3 +88,42 @@ mod front_of_the_house {
 }
 ```
 
+## Relative path using `super`
+
+`super` keyword is similar to UNIX `..` operator. It refers to parent module.
+
+## Making `enum` and `struct` public
+
+Prepeding `pub` keyword to a `struct` or `enum` would make it public.
+However, an extra step would require for making `struct` field public.
+One need to prepend `pub` keyword to any field that are supposed to be public.
+
+Example:
+
+```rs
+mod back_of_house {
+    pub struct Breakfast {
+        pub toast: String,
+        seasonal_fruit: String,
+    }
+
+    impl Breakfast {
+        pub fn summer(toast: &str) -> Breakfast {
+            Breakfast {
+                toast: String::from(toast),
+                seasonal_fruit: String::from("peaches"),
+            }
+        }
+    }
+}
+
+pub fn eat_at_restaurant() {
+    let mut meal = back_of_house::Breakfast::summer("Rye");
+
+    meal.toast = String::from("Wheat");
+    println!("I'd like {} toast please", meal.toast);
+}
+```
+
+## The `use` Keyword
+

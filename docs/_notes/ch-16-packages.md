@@ -6,7 +6,7 @@ tags: ["package"]
 
 Package management comes into play when a project gets bigger and bigger.
 Dividing codes into multiple files and grouping them make a project more
-readable and maintainable.
+maintainable.
 
 A package can contain multiple binary crate and optionally one library crate.
 
@@ -42,7 +42,7 @@ hold `struct`, functions etc.
 
 An example:
 
-```rs
+```rust
 mod front_of_the_house {
     mod hosting {
         fn add_to_wishlist() {};
@@ -63,7 +63,7 @@ separated by `::`.
 
 Example:
 
-```rs
+```rust
 pub fn call_them() {
     // absolute path
     crate::front_of_the_house::hosting::add_to_wishlist();
@@ -80,7 +80,7 @@ must be prepend.
 
 Example:
 
-```rs
+```rust
 mod front_of_the_house {
     mod hosting {
         fn add_to_wishlist() {};
@@ -100,7 +100,7 @@ One need to prepend `pub` keyword to any field that are supposed to be public.
 
 Example:
 
-```rs
+```rust
 mod back_of_house {
     pub struct Breakfast {
         pub toast: String,
@@ -127,3 +127,114 @@ pub fn eat_at_restaurant() {
 
 ## The `use` Keyword
 
+`use` keyword brings function, `struct` etc into the scope where it is being
+called from. Example: 
+
+```rust
+mod front_of_house {
+    pub mod hosting {
+        pub fn add_to_waitlist() {}
+    }
+}
+
+use front_of_the_house::hosting;
+
+hosting::add_to_waitlist();   // this will refer to module `front_of_the_house`
+```
+
+It is wise to call parent(or a location) which clearly explains where the said
+variable is defined, instead of just the associated function.
+
+```rust
+use front_of_the_house::hosting::add_to_waitlist; // not good
+use front_of_the_house::hosting; // good. now we know where it is defined
+```
+
+Apart from that, bringing same two or more types with same name into scope
+requires to call their parent modules.
+
+```rust
+use std::fmt;
+use std::io;
+
+fn function1() -> fmt::Result {}
+
+fn function2() -> io::IoResult<()> {}
+```
+
+## The `as` keyword
+
+`as` keyword can rename a module so that things does not conflict with each
+other.
+
+```rust
+use std::fmt::Result;
+use std::io::Result as IoResult;
+
+fn function1() -> Result {}
+
+fn function2() -> IoResult<()> {}
+```
+
+## Re-exporting an imported name
+
+When bringing in a name into scope using `use`, the name is private to current
+scope. This name could be re-exported for external codes to call it.
+
+```rust
+pub use crate::front_of_the_house::hosting;
+```
+
+In above example, anything that is attached to `hosting` that is public,
+would become available for external codes to call.
+
+## Using external packages
+
+In order to use an external crate from crates.io, one needs to define it in
+`Cargo.toml` file. When building the project, `cargo` automatically downloads
+all mentioned crates from `Cargo.toml` and adds them to project.
+
+```toml
+// Cargo.toml
+[dependencies]
+rand = "0.5.5"
+```
+
+Calling `rand` in code:
+
+```rust
+use rand::Rng;
+
+fn main() {
+  let number = rand::thread_rng().gen_range(1, 101);
+}
+```
+
+## Using nested paths
+
+Different varient of `use` keyword can be used to reduce `use` list.
+
+```rust
+// SAME PREFIX
+
+// this ...
+use std::cmp::Ordering;
+use std::io;
+
+// can be written as ...
+use std::{cmp::Ordering, io};
+
+
+
+// ELIMINATE COMMON PART
+
+use std::io;
+use std::io::Write;
+// to
+use std::io::{self, Write};
+```
+
+## Glob Operator (`*`)
+
+Glob operator bring every public names into scope.
+Example: `use std::collections::*;`
